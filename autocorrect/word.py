@@ -14,7 +14,7 @@ https://github.com/foobarmus/autocorrect
 
 """
 from autocorrect.utils import concat
-from autocorrect.nlp_parser import NLP_WORDS
+# from autocorrect.nlp_parser import NLP_WORDS
 from autocorrect.word_lists import LOWERCASE, MIXED_CASE
 from autocorrect.word_lists import LOWERED, CASE_MAPPED
 
@@ -24,7 +24,7 @@ KNOWN_WORDS = LOWERCASE | LOWERED | NLP_WORDS
 class Word(object):
     """container for word-based methods"""
 
-    def __init__(self, word):
+    def __init__(self, word, NLP_WORDS):
         """
         Generate slices to assist with typo
         definitions.

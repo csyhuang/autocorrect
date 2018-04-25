@@ -35,6 +35,22 @@ def words_from_archive(filename, include_dups=False, map_case=False):
     else:
         return set(words)
 
+
+# Added on April 24: to read txt directly
+def words_from_txt(filename, include_dups=False, map_case=False):
+    """
+    extract words from txt file directly.
+    """
+    with open(filename, 'r') as f:
+        words = re.findall(RE, f.read())
+    if include_dups:
+        return words
+    elif map_case:
+        return {w.lower(): w for w in words}
+    else:
+        return set(words)
+
+
 def concat(*args):
     """reversed('th'), 'e' => 'hte'"""
     try:
